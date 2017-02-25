@@ -21,7 +21,7 @@
                         <li><a href="#">Investors</a></li>
                     </ul>
                 </li> 
-                    <li><a href="services.html">Services</a></li>
+                    <li class="{{ (Route::currentRouteName() == 'services' ? 'active' : '') }}"><a href="{{ route('services') }}">Services</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
                     <li class="{{ (Route::currentRouteName() == 'contact') ? 'active' : '' }}"><a href="{{ route('contact') }}">Contact</a></li>

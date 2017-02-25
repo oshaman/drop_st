@@ -6,7 +6,7 @@
 			</div>
 		</div>
 	</div>
-	</section>
+</section>
 	<section id="content">
 	
 	<div class="container">
