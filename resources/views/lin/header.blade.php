@@ -11,7 +11,7 @@
             </div>
             <div class="navbar-collapse collapse ">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.html">Home</a></li> 
+                    <li class="{{ (Route::currentRouteName() == 'home') ? 'active' : '' }}"><a href="{{ route('home') }}">Home</a></li> 
                      <li class="dropdown">
                     <a href="#" data-toggle="dropdown" class="dropdown-toggle">About Us <b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -24,7 +24,7 @@
                     <li><a href="services.html">Services</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li class="{{ (Route::currentRouteName() == 'contact') ? 'active' : '' }}"><a href="{{ route('contact') }}">Contact</a></li>
                 </ul>
             </div>
         </div>

@@ -58,10 +58,27 @@
                                 
                                 
                                 
-								<div class="col-md-6">
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script><div style="overflow:hidden;height:500px;width:600px;"><div id="gmap_canvas" style="height:500px;width:600px;"></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style><a class="google-map-code" href="http://www.trivoo.net" id="get-map-data">trivoo</a></div><script type="text/javascript"> function init_map(){var myOptions = {zoom:14,center:new google.maps.LatLng(50.395870, 30.647371),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(50.395870, 30.647371)});infowindow = new google.maps.InfoWindow({content:"<b>The Breslin</b><br/>2880 Broadway<br/> New York" });google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
-								</div>
-							</div>
+            <div class="col-md-6">
+                <script src="https://maps.googleapis.com/maps/api/js?key={{ config('settings.maps_api') }}&language=ua"
+                        type="text/javascript">
+                </script>
+                <div style="overflow:hidden;height:500px;width:600px;"><div id="gmap_canvas" style="height:500px;width:600px;"></div>
+                    <style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
+                    <a class="google-map-code" href="http://www.trivoo.net" id="get-map-data">trivoo</a>
+                </div>
+                <script type="text/javascript">
+                    function init_map(){var myOptions = {
+                            zoom:14,center:new google.maps.LatLng(50.395870, 30.647371),
+                            mapTypeId: google.maps.MapTypeId.ROADMAP};
+                            map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
+                            marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(50.395870, 30.647371)});
+                            infowindow = new google.maps.InfoWindow({content:"<b>OShaman</b><br/>Darnica<br/> Kyiv" });
+                            google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});
+                            infowindow.open(map,marker);}
+                            google.maps.event.addDomListener(window, 'load', init_map);
+                </script>
+			</div>
+        </div>
 	</div>
  
 	</section>

@@ -11,4 +11,9 @@
 |
 */
 
-Route::get('/', ['uses' => 'MainController@show', 'as' => 'home']);
+Route::get('/', ['uses' => 'HomeController@show', 'as' => 'home']);
+Route::get('/contact', ['uses' => 'ContactController@show', 'as' => 'contact']);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
