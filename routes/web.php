@@ -17,7 +17,7 @@ Route::group([], function() {
 
 
 
-Route::group(['prefix' => 'services'/* , 'middleware'=>'auth' */], function() {
+Route::group(['prefix' => 'services' , 'middleware'=>'auth'], function() {
     
     Route::get('/',['uses'=>'ServicesController@show', 'as'=>'services']);
 		
