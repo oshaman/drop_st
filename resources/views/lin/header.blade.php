@@ -25,6 +25,7 @@
                     <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
                     <li class="{{ (Route::currentRouteName() == 'contact') ? 'active' : '' }}"><a href="{{ route('contact') }}">Contact</a></li>
+                    <li><a href="{{ Auth::check() ? route('logout') : route('login') }}" class="icon-info-blocks fa">{{ Auth::check() ? Auth::user()->name : 'Login' }}</a></li>
                 </ul>
             </div>
         </div>

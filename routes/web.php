@@ -22,12 +22,13 @@ Route::group(['prefix' => 'services'/* , 'middleware'=>'auth' */], function() {
     Route::get('/',['uses'=>'ServicesController@show', 'as'=>'services']);
 		
     //drop/add
-    Route::match(['get','post'],'/add',['uses'=>'ServicesAddController@add','as'=>'add']);
-    //drop/edit/2
-    Route::match(['get','post','delete'],'/edit/{entry}',['uses'=>'ServicesEditController@edit','as'=>'edit']);
+    // Route::match(['get','post'],'/add',['uses'=>'ServicesAddController@add','as'=>'add']);
+    // //drop/edit/2
+    // Route::match(['get','post','delete'],'/edit/{entry}',['uses'=>'ServicesEditController@edit','as'=>'edit']);
     
-    // Auth::routes();
 });
+    Auth::routes();
+    Route::get('/logout', 'Auth\LoginController@logout');
 // Route::get('/home', 'HomeController@index');
 
 
