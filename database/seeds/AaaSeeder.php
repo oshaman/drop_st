@@ -19,10 +19,12 @@ class AaaSeeder extends Seeder
             ]
         );
         DB::table('permissions')->insert(
-            ['name'=>'ADMIN_USERS'],
-            ['name'=>'VIEW_ADMIN'],
-            ['name'=>'VIEW_DATA'],
-            ['name'=>'EDIT_DATA'],
+            [
+                ['name'=>'ADMIN_USERS'],
+                ['name'=>'VIEW_ADMIN'],
+                ['name'=>'VIEW_DATA'],
+                ['name'=>'EDIT_DATA'],
+            ]
         );
     }
 }
