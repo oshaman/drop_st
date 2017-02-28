@@ -43,8 +43,25 @@ class Handler extends ExceptionHandler
      * @return \Illuminate\Http\Response
      */
     public function render($request, Exception $exception)
-    {
-        return parent::render($request, $exception);
+    {  
+       if($this->isHttpException($exception)) {
+	   		$statusCode = $exception->getStatusCode();
+	   		
+	   		switch($statusCode) {
+				case '403' :
+				    
+                    \Log::alert('Доступ запрещен - '. $request->url());
+                    
+                    return response()->view(config('settings.theme').'.exceptions.403',['title' =>'Доступ запрещен']);
+                case '404' :
+				    
+                    \Log::alert('Страница не найдена - '. $request->url());
+                    
+                    return response()->view(config('settings.theme').'.exceptions.404',['title' =>'Страница не найдена']);
+			}
+	   }
+      
+       return parent::render($request, $exception); 
     }
 
     /**
