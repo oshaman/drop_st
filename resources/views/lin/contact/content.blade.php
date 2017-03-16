@@ -17,40 +17,51 @@
                     <p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas</p>
                 </div>  
             </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do tempor.</p>
 		</div>
         <div class="row">
             <div class="col-md-6">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do tempor.</p>
 
+        @if (count($errors) > 0)
+            <div class="box-area box">
+                
+            @foreach ($errors->all() as $error)
+                <p class="text-danger">{{ $error }}</p>
+            @endforeach
+   
+            </div>
+        @endif
+        @if (session('status'))
+            <div  class="box-area box">  <!-- For success/fail messages -->
+                <h3 class="text-success">{{ session('status') }}</h3>
+            </div>
+        @endif
+            
             <!-- Form itself -->
-            <form name="sentMessage" id="contactForm"  novalidate>
+            <form name="sentMessage" id="contactForm"  method="post" action="{{ route('contact') }}" enctype="multipart/form-data" novalidate>
+                {{ csrf_field() }}
                 <h3>Contact me</h3>
                 <div class="control-group">
                     <div class="controls">
                         <input type="text" class="form-control" 
-                        placeholder="Full Name" id="name" required
-                        data-validation-required-message="Please enter your name" />
+                        placeholder="Full Name" id="name" name="name" value="{{ old('name') }}" required />
                         <p class="help-block"></p>
                     </div>
                 </div> 	
                 <div class="control-group">
                     <div class="controls">
                         <input type="email" class="form-control" placeholder="Email" 
-                        id="email" required
-                        data-validation-required-message="Please enter your email" />
+                        id="email"  value="{{ old('email') }}" name="email" required />
                     </div>
                 </div> 	
 
                 <div class="control-group">
                     <div class="controls">
-                        <textarea rows="10" cols="100" class="form-control" 
-                        placeholder="Message" id="message" required
-                        data-validation-required-message="Please enter your message" minlength="5" 
-                        data-validation-minlength-message="Min 5 characters" 
-                        maxlength="999" style="resize:none"></textarea>
+                        <textarea rows="10" cols="100" class="form-control"
+                        placeholder="Message" id="message" required minlength="5" name="text" 
+                        maxlength="999" style="resize:none">{{ old('text') ?? '' }}</textarea>
                     </div>
                 </div> 		 
-                <div id="success"> </div> <!-- For success/fail messages -->
                 <button type="submit" class="btn btn-primary pull-right">Send</button><br />
             </form>
         </div>
@@ -59,8 +70,6 @@
                     type="text/javascript">
             </script>
             <div style="overflow:hidden;height:500px;width:600px;"><div id="gmap_canvas" style="height:500px;width:600px;"></div>
-                <style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
-                <a class="google-map-code" href="http://www.trivoo.net" id="get-map-data">trivoo</a>
             </div>
             <script type="text/javascript">
                 function init_map(){var myOptions = {

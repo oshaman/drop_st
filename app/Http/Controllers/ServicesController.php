@@ -19,6 +19,7 @@ class ServicesController extends MainController
         $this->content_temp = '.services.content';
 
         $this->template = config('settings.theme') . '.services.services';     
+        // $this->template = config('settings.theme') . '.services.test';     
 
         
         return $this->renderOutput();
