@@ -48,6 +48,7 @@
 <!-- javascript
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="{{ asset(config('settings.theme')) }}/js/jquery.js"></script>
 <script src="{{ asset(config('settings.theme')) }}/js/jquery.easing.1.3.js"></script>
 <script src="{{ asset(config('settings.theme')) }}/js/bootstrap.min.js"></script>

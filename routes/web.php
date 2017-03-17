@@ -12,7 +12,7 @@
 */
 Route::group([], function() {
     Route::get('/', ['uses' => 'HomeController@show', 'as' => 'home']);
-    Route::match(['get', 'post'], '/contact', ['uses' => 'ContactController@index', 'as' => 'contact']);
+    Route::match(['get', 'post'], '/contacts', ['uses' => 'ContactsController@index', 'as' => 'contacts']);
 });
 
 

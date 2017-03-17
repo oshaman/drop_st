@@ -7,7 +7,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><img src="{{ asset(config('settings.theme')) }}/img/logo.png" alt="logo"/></a>
+                <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ asset(config('settings.theme')) }}/img/logo.png" alt="logo"/></a>
             </div>
             <div class="navbar-collapse collapse ">
                 <ul class="nav navbar-nav">
@@ -24,7 +24,7 @@
                     <li class="{{ (Route::currentRouteName() == 'services' ? 'active' : '') }}"><a href="{{ route('services') }}">Services</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
-                    <li class="{{ (Route::currentRouteName() == 'contact') ? 'active' : '' }}"><a href="{{ route('contact') }}">Contact</a></li>
+                    <li class="{{ (Route::currentRouteName() == 'contacts') ? 'active' : '' }}"><a href="{{ route('contacts') }}">Contacts</a></li>
                     <li class="{{ (Route::currentRouteName() == 'login') ? 'active' : '' }}"><a href="{{ Auth::check() ? route('logout') : route('login') }}" class="icon-info-blocks fa">{{ Auth::check() ? Auth::user()->name : 'Login' }}</a></li>
                 </ul>
             </div>

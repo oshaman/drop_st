@@ -38,7 +38,7 @@
         @endif
             
             <!-- Form itself -->
-            <form name="sentMessage" id="contactForm"  method="post" action="{{ route('contact') }}" enctype="multipart/form-data" novalidate>
+            <form name="sentMessage" id="contactForm"  method="post" action="{{ route('contacts') }}" enctype="multipart/form-data" novalidate>
                 {{ csrf_field() }}
                 <h3>Contact me</h3>
                 <div class="control-group">
@@ -61,8 +61,13 @@
                         placeholder="Message" id="message" required minlength="5" name="text" 
                         maxlength="999" style="resize:none">{{ old('text') ?? '' }}</textarea>
                     </div>
-                </div> 		 
-                <button type="submit" class="btn btn-primary pull-right">Send</button><br />
+                </div>
+                <p class="help-block"></p>
+                <!-- Captcha -->
+                <div class="form-group">
+                <button type="submit" class="btn btn-primary pull-right">Send</button>
+                    <div class="g-recaptcha" data-sitekey="6LdnXxkUAAAAACrXl92Wjn97T7m9tQhk09C1DSd_"></div>
+                </div>
             </form>
         </div>
         <div class="col-md-6">

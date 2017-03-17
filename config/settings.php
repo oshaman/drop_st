@@ -2,7 +2,7 @@
 	return [
 		'theme' => env('THEME','default'),
         'maps_api' => 'AIzaSyAzbly87RCqSR1VP29B0B-PtxdYhKbPlKg',
-		
+		'captcha_key' => '6LdnXxkUAAAAADJldZa8YgdIxmqzo0stntJYEOie',
         
         
         
