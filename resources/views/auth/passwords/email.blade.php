@@ -1,4 +1,8 @@
-@extends('layouts.app')
+@extends(config('settings.theme').'.layouts.index')
+
+@section('header')
+    @include(config('settings.theme').'.header')
+@endsection
 
 @section('content')
 <div class="container">
@@ -43,4 +47,8 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('footer')
+    @include(config('settings.theme').'.footer')
 @endsection

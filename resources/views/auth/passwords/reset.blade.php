@@ -1,4 +1,8 @@
-@extends('layouts.app')
+@extends(config('settings.theme').'.layouts.index')
+
+@section('header')
+    @include(config('settings.theme').'.header')
+@endsection
 
 @section('content')
 <div class="container">
@@ -15,7 +19,7 @@
                     @endif
 
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('password.request') }}">
-                        {{ csrf_field() }}
+                    {{ csrf_field() }}
 
                         <input type="hidden" name="token" value="{{ $token }}">
 
@@ -73,4 +77,8 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('footer')
+    @include(config('settings.theme').'.footer')
 @endsection
