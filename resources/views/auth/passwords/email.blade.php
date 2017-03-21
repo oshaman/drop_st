@@ -5,6 +5,16 @@
 @endsection
 
 @section('content')
+<section id="inner-headline">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<h2 class="pageTitle">RESET</h2>
+			</div>
+		</div>
+	</div>
+</section>
+<section id="content">
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -47,6 +57,7 @@
         </div>
     </div>
 </div>
+</section>
 @endsection
 
 @section('footer')
