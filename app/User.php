@@ -37,6 +37,12 @@ class User extends Authenticatable implements CanResetPassword
 		return $this->belongsToMany('Features\Role','role_user');
 	}
     
+    public function items() {
+		return $this->hasMany('Features\Item');
+	}
+    
+    
+    
     public function canDo($permission) {
         foreach($this->roles as $role) {
             foreach($role->perms as $perm) {

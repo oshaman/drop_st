@@ -4,11 +4,15 @@ namespace Features\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Gate;
+use Features\Item;
 
 class ServicesController extends MainController
 {
     public function show()
     {
+        
+        dd(Item::find(1)->user->id);
+        
         if (Gate::denies('VIEW_ADMIN')) {
             // The current user does not have access...
             abort(403);
