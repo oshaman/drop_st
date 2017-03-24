@@ -26,6 +26,18 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = '/';
+    
+    /**
+    * If the redirect path needs custom generation logic 
+    * you may define a redirectTo method
+    * instead of a redirectTo property
+    *
+    */
+    
+    protected function redirectTo()
+    {
+        return back();
+    }
 
     /**
      * Create a new controller instance.

@@ -65,10 +65,6 @@ class MainController extends Controller
 		$this->vars = array_add($this->vars,'meta_desc',$this->meta_desc);
 		$this->vars = array_add($this->vars,'title',$this->title);
 		
-        
-		$content = view(config('settings.theme') . $this->content_temp)->render();
-        $this->vars = array_add($this->vars, 'content', $content);
-        
         $header = view(config('settings.theme') . $this->header_temp)->render();
         $this->vars = array_add($this->vars, 'header', $header);
 		

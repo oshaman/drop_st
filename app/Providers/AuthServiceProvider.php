@@ -29,5 +29,9 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('VIEW_ADMIN', function ($user) {
         	return $user->canDo('VIEW_ADMIN', FALSE);
         });
+        
+        Gate::define('VIEW_DATA', function ($user) {
+        	return $user->canDo('VIEW_DATA', FALSE);
+        });
     }
 }

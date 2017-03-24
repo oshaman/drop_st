@@ -23,6 +23,8 @@ class HomeController extends MainController
      */
     public function show()
     {
+        $content = view(config('settings.theme') . $this->content_temp)->render();
+        $this->vars = array_add($this->vars, 'content', $content);
         return $this->renderOutput();
     }
 }
