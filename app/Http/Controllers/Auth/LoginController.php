@@ -5,6 +5,7 @@ namespace Features\Http\Controllers\Auth;
 use Features\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
+
 class LoginController extends Controller
 {
     /*
@@ -27,17 +28,6 @@ class LoginController extends Controller
      */
     protected $redirectTo = '/';
     
-    /**
-    * If the redirect path needs custom generation logic 
-    * you may define a redirectTo method
-    * instead of a redirectTo property
-    *
-    */
-    
-    protected function redirectTo()
-    {
-        return back();
-    }
 
     /**
      * Create a new controller instance.
@@ -46,6 +36,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        $this->redirectTo = url()->previous();
         $this->middleware('guest', ['except' => 'logout']);
     }
 }

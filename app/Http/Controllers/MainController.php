@@ -47,7 +47,8 @@ class MainController extends Controller
     * @return a view instance
     */
     
-    protected function renderOutput() {
+    protected function renderOutput()
+    {
 		
 		// $menu = $this->getMenu();
 		

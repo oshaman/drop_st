@@ -28,6 +28,7 @@ class ServicesController extends MainController
         $this->template = config('settings.theme') . '.services.services';     
         // $this->template = config('settings.theme') . '.services.test';     
         $items = Auth::user()->items()->get();
+        if ($items->isEmpty()) return redirect()->route('add');
         $content = view(config('settings.theme') . $this->content_temp)->with('items',$items)->render();
         $this->vars = array_add($this->vars, 'content', $content);
         
