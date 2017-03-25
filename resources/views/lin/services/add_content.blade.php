@@ -9,8 +9,16 @@
 </section>
 <section id="content">
 <div class="container">
-
-    <!-- Form -->
+@if (count($errors) > 0)
+    <div class="help-block">
+        
+            @foreach ($errors->all() as $error)
+                <p>{{ $error }}</p>
+            @endforeach
+   
+    </div>
+@endif
+<!-- Form -->
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-default">
@@ -21,10 +29,10 @@
                     {{ csrf_field() }}
                         <div class="form-group">
                         
-                            <label for="addItem" class="col-md-4 control-label">ASIN</label>
+                            <label for="asin" class="col-md-4 control-label">ASIN</label>
 
                             <div class="col-md-6">
-                                <input id="addItem" type="text" class="form-control" name="addItem" autofocus required>
+                                <input id="asin" type="text" class="form-control" name="asin" autofocus required>
                             </div>
                         </div>
 

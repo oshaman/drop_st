@@ -8,11 +8,36 @@ class ServicesAddController extends MainController
 {
     public function add(Request $request)
     {
+        // if(Gate::denies('save', $this->model)) {
+			// abort(403);
+		// }
+        
+        
         if ($request->isMethod('post')) {
-            dd('POST');
+            
+            $this->validate($request, [
+                'asin' => 'required|string|min:7|max:8'
+		    ]);
+            
+            $data = $request->only('asin');
+
+            if(empty($data)) {
+                return array('error' => 'Нет данных');
+            }
+
+            
+            
+            
+            // $item->fill($data); 
+				
+            // if($request->user()->articles()->save($this->model)) {
+                // return ['status' => 'Материал добавлен'];
+            // }
+            
+            dd($data);
+            dd($item->get());
         }
         
-        // dd('get');
         $this->title = 'Add Item';
         $this->keywords = 'Add Item';
         $this->meta_desc = 'Add Item';
@@ -24,6 +49,5 @@ class ServicesAddController extends MainController
         $this->vars = array_add($this->vars, 'content', $content);
         
         return $this->renderOutput();
-        
     }
 }
